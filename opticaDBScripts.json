@@ -1,0 +1,194 @@
+> show dbs
+admin     0.000GB
+config    0.000GB
+local     0.000GB
+opticaDB  0.000GB
+
+> db
+opticaDB
+
+> show collections
+clientes
+gafas
+marca
+proveedores
+vendedor
+venta
+
+> db.clientes.find().pretty()
+{
+        "_id" : ObjectId("628be6c44b341dc0f9e879f2"),
+        "Nombre" : "Charlize Theron",
+        "Direccion" : "Torre Vengadores, 7",
+        "Telefono" : 2222227,
+        "Email" : "charizar@avenger.com",
+        "Fecha Registro" : ISODate("2022-05-23T19:55:48.367Z")
+}
+{
+        "_id" : ObjectId("628bf0b64b341dc0f9e879f3"),
+        "Nombre" : "Gal Gadot",
+        "Direccion" : "Wonderwoman, 3",
+        "Telefono" : 3333337,
+        "Email" : "wonderwoman@ligajusticia.com",
+        "Fecha Registro" : ISODate("2022-05-23T20:38:14.442Z"),
+        "Recomendado por" : {
+                "_id" : ObjectId("628be6c44b341dc0f9e879f2")
+        }
+}
+> db.gafas.find().pretty()
+{
+        "_id" : ObjectId("628bf4b64b341dc0f9e879f6"),
+        "GradVidrioDer" : "+1",
+        "GradVidrioIzq" : "+1",
+        "tipoMontura" : "pasta",
+        "colorMontura" : "verde",
+        "colorVidrioDer" : "cromado",
+        "colorVidrioIzq" : "cromado",
+        "precio" : 250,
+        "marca" : {
+                "_id" : ObjectId("628b89814b341dc0f9e879ef")
+        }
+}
+{
+        "_id" : ObjectId("628bf4b64b341dc0f9e879f7"),
+        "GradVidrioDer" : "+2",
+        "GradVidrioIzq" : "+2",
+        "tipoMontura" : "metalica",
+        "colorMontura" : "bronce",
+        "colorVidrioDer" : "transparente",
+        "colorVidrioIzq" : "transparente",
+        "precio" : 125.5,
+        "marca" : {
+                "_id" : ObjectId("628b89814b341dc0f9e879f0")
+        }
+}
+{
+        "_id" : ObjectId("628bf4b64b341dc0f9e879f8"),
+        "GradVidrioDer" : "+0.5",
+        "GradVidrioIzq" : "+0.5",
+        "tipoMontura" : "flotante",
+        "colorMontura" : "oro",
+        "colorVidrioDer" : "transparente",
+        "colorVidrioIzq" : "transparente",
+        "precio" : 175.5,
+        "marca" : {
+                "_id" : ObjectId("628b89814b341dc0f9e879f1")
+        }
+}
+> db.marca.find().pretty()
+{
+        "_id" : ObjectId("628b89814b341dc0f9e879ef"),
+        "Nombre" : "Raiven",
+        "proveedor" : {
+                "_id" : ObjectId("628b66df244c162fd243afe5")
+        }
+}
+{
+        "_id" : ObjectId("628b89814b341dc0f9e879f0"),
+        "Nombre" : "Waqley",
+        "proveedor" : {
+                "_id" : ObjectId("628b6765244c162fd243afe6")
+        }
+}
+{
+        "_id" : ObjectId("628b89814b341dc0f9e879f1"),
+        "Nombre" : "TH",
+        "proveedor" : {
+                "_id" : ObjectId("628b6765244c162fd243afe7")
+        }
+}
+> db.proveedores.find().pretty()
+{
+        "_id" : ObjectId("628b66df244c162fd243afe5"),
+        "Nombre" : "Gafas Jonh Wick",
+        "Direccion" : {
+                "Calle" : "Genius",
+                "Numero" : 45,
+                "Piso" : "PB",
+                "Puerta" : "2B",
+                "Ciudad" : "Murcia",
+                "Codigo postal" : 45784,
+                "Pais" : "España"
+        },
+        "Telefono" : 5555555,
+        "Fax" : 5555557,
+        "NIF" : "5555555P"
+}
+{
+        "_id" : ObjectId("628b6765244c162fd243afe6"),
+        "Nombre" : "Gafas Ojo de Halcón",
+        "Direccion" : {
+                "Calle" : "Mandragora",
+                "Numero" : 78,
+                "Piso" : "1",
+                "Puerta" : "1C",
+                "Ciudad" : "Burgos",
+                "Codigo postal" : 789543,
+                "Pais" : "España"
+        },
+        "Telefono" : 5555558,
+        "Fax" : 5555554,
+        "NIF" : "5555555B"
+}
+{
+        "_id" : ObjectId("628b6765244c162fd243afe7"),
+        "Nombre" : "Gafas Thor",
+        "Direccion" : {
+                "Calle" : "Avengers",
+                "Numero" : 7,
+                "Piso" : "PB",
+                "Puerta" : "1A",
+                "Ciudad" : "Madrid",
+                "Codigo postal" : 25789,
+                "Pais" : "España"
+        },
+        "Telefono" : 5555553,
+        "Fax" : 5555552,
+        "NIF" : "5555555A"
+}
+> db.vendedor.find().pretty()
+{
+        "_id" : ObjectId("628bf2804b341dc0f9e879f4"),
+        "Nombre" : "Vanelope Vondutch",
+        "DNI" : "7777777V",
+        "Telefono" : 777787
+}
+{
+        "_id" : ObjectId("628bf2804b341dc0f9e879f5"),
+        "Nombre" : "Vincent Vega",
+        "DNI" : "3333333T",
+        "Telefono" : 777785
+}
+> db.venta.find().pretty()
+{
+        "_id" : ObjectId("628bf8b64b341dc0f9e879f9"),
+        "Cliente" : {
+                "_id" : ObjectId("628be6c44b341dc0f9e879f2")
+        },
+        "Vendedor" : {
+                "_id" : ObjectId("628bf2804b341dc0f9e879f4")
+        },
+        "Detalle Venta" : {
+                "Modelo" : {
+                        "_id" : ObjectId("628bf4b64b341dc0f9e879f6")
+                },
+                "Cantidad" : 1
+        },
+        "Fecha Venta" : ISODate("2022-05-23T21:55:46.125Z")
+}
+{
+        "_id" : ObjectId("628bf8b64b341dc0f9e879fa"),
+        "Cliente" : {
+                "_id" : ObjectId("628bf0b64b341dc0f9e879f3")
+        },
+        "Vendedor" : {
+                "_id" : ObjectId("628bf2804b341dc0f9e879f5")
+        },
+        "Detalle Venta" : {
+                "Modelo" : {
+                        "_id" : ObjectId("628bf4b64b341dc0f9e879f7")
+                },
+                "Cantidad" : 1
+        },
+        "Fecha Venta" : ISODate("2022-05-23T21:56:43.824Z")
+}

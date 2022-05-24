@@ -1,0 +1,130 @@
+> show collections
+categoria
+cliente
+domicilio
+empleados
+localidad
+producto
+provincia
+tienda
+
+> db.categoria.find().pretty()
+{
+        "_id" : ObjectId("628c23444b341dc0f9e87a01"),
+        "Tipo Categoria" : "Italianas"
+}
+{
+        "_id" : ObjectId("628c23444b341dc0f9e87a02"),
+        "Tipo Categoria" : "New Yorkers"
+}
+> db.cliente.find().pretty()
+{
+        "_id" : ObjectId("628c22454b341dc0f9e879ff"),
+        "Nombre" : "Ursula",
+        "Apellidos" : "Pulpo",
+        "Dirección" : "Bajo el Mar, 7",
+        "Codigo Postal" : "04789",
+        "Localidad" : {
+                "_id" : ObjectId("628c21654b341dc0f9e879fd")
+        },
+        "Telefono" : "55555789"
+}
+{
+        "_id" : ObjectId("628c22454b341dc0f9e87a00"),
+        "Nombre" : "Tritón",
+        "Apellidos" : "The King of the Sea",
+        "Dirección" : "Bajo el Mar, 1",
+        "Codigo Postal" : "02111",
+        "Localidad" : {
+                "_id" : ObjectId("628c21654b341dc0f9e879fd")
+        },
+        "Telefono" : "55555757"
+}
+> db.domicilio.find().pretty()
+{
+        "_id" : ObjectId("628c275b4b341dc0f9e87a09"),
+        "Fecha Entrega" : ISODate("2022-05-24T00:31:23.271Z"),
+        "Empleado" : {
+                "_id" : ObjectId("628c267f4b341dc0f9e87a08")
+        }
+}
+
+> db.empleados.find().pretty()
+{
+        "_id" : ObjectId("628c267f4b341dc0f9e87a07"),
+        "Nombre" : "Tomb",
+        "Apellidos" : "Raider",
+        "NIF" : "516354254O",
+        "Telefono" : 2587498,
+        "Tipo Empleado" : "Cocinera",
+        "Tienda" : {
+                "_id" : ObjectId("628c23e74b341dc0f9e87a06")
+        }
+}
+{
+        "_id" : ObjectId("628c267f4b341dc0f9e87a08"),
+        "Nombre" : "Bella",
+        "Apellidos" : "La Lista",
+        "NIF" : "516354257O",
+        "Telefono" : 2587798,
+        "Tipo Empleado" : "Repartidora",
+        "Tienda" : {
+                "_id" : ObjectId("628c23e74b341dc0f9e87a06")
+        }
+}
+> db.localidad.find().pretty()
+{
+        "_id" : ObjectId("628c21654b341dc0f9e879fd"),
+        "Nombre" : "Barcelona",
+        "Provincia" : {
+                "_id" : ObjectId("628c204c4b341dc0f9e879fb")
+        }
+}
+{
+        "_id" : ObjectId("628c21654b341dc0f9e879fe"),
+        "Nombre" : "Madrid",
+        "Provincia" : {
+                "_id" : ObjectId("628c204c4b341dc0f9e879fc")
+        }
+}
+> db.producto.find().pretty()
+{
+        "_id" : ObjectId("628c23914b341dc0f9e87a03"),
+        "Nombre" : "La Fantastica",
+        "Tipo Producto" : "Hamburguesa",
+        "Descripción" : "Doble carne con rucula",
+        "Imagen" : "https:jhakchgkajgh",
+        "Precio" : "12 Euros"
+}
+{
+        "_id" : ObjectId("628c23914b341dc0f9e87a04"),
+        "Nombre" : "La Cuatro",
+        "Tipo Producto" : "Pizza",
+        "Descripción" : "Cuatro quesos",
+        "Imagen" : "https:jhakchgkaasdfh",
+        "Precio" : "10 Euros",
+        "Categoria Pizza" : {
+                "_id" : ObjectId("628c23444b341dc0f9e87a01")
+        }
+}
+{
+        "_id" : ObjectId("628c23914b341dc0f9e87a05"),
+        "Nombre" : "Coke",
+        "Tipo Producto" : "Bebida",
+        "Descripción" : "Gaseosa sabor cola",
+        "Imagen" : "https:jhakwefckajgh",
+        "Precio" : "2 Euros"
+}
+> db.provincia.find().pretty()
+{ "_id" : ObjectId("628c204c4b341dc0f9e879fb"), "Nombre" : "Barcelona" }
+{ "_id" : ObjectId("628c204c4b341dc0f9e879fc"), "Nombre" : "Madrid" }
+> db.tienda.find().pretty()
+{
+        "_id" : ObjectId("628c23e74b341dc0f9e87a06"),
+        "Direccion" : "Arago, 45",
+        "Correo Postal" : 28034,
+        "Localidad" : {
+                "_id" : ObjectId("628c21654b341dc0f9e879fd")
+        }
+}
+>
